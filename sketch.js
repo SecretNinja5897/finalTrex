@@ -12,7 +12,6 @@ var score=0;
 
 var gameOver, restart;
 
-localStorage["HighestScore"] = 0;
 
 function preload(){
   trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
@@ -42,12 +41,12 @@ function setup() {
   trex.addAnimation("collided", trex_collided);
   trex.scale = 0.5;
   
-  ground = createSprite(width-50,height-180,400,20);
+  ground = createSprite(width-50,height-180,width,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
   
-  gameOver = createSprite(width-400,height-400);
+  gameOver = createSprite(width-width/2,height-height/2);
   gameOver.addImage(gameOverImg);
   
   restart = createSprite(width-400,height-360);
